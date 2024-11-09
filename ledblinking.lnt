@@ -1,0 +1,51 @@
+// Include directories
+-I"/home/purusottam/ledblinking/Drivers/CMSIS/Device/ST/STM32F4xx/Include"     // Update if your drivers are in this directory
+-I"/home/purusottam/ledblinking/Drivers/STM32F4xx_HAL_Driver/Inc"
+-I"/home/purusottam/ledblinking/Drivers/STM32F4xx_HAL_Driver/Src"
+
+-I"/home/purusottam/ledblinking/Core/Inc"    // Include path for header files in 'Inc'
+-I"/home/purusottam/ledblinking/Core/Src"    // Include path for source files in 'Src'
+
+-I"/usr/include/linux"
+-I"/usr/include/x86_64-linux-gnu"
+// Remove C++ include paths
+-I"/usr/include/c++/14"
+
+-I"/usr/include/linux" 
+
+// Include directories
+-I"/usr/lib/gcc/x86_64-linux-gnu/14/include"
+-I"/usr/local/include"
+
+-I"/usr/include"
+
+-I"/home/purusottam/ledblinking/Drivers/CMSIS/Include"
+
+// PCLint configuration files (update if needed)
+-i"/home/purusottam/Downloads/pclp.linux.2.2/pclp/lnt/"  // PCLint's GCC configuration
+-i"/home/purusottam/ledblinking"  // If you have STM32-specific settings
+
+-elib("/usr/include/c++")
+-elib("/usr/include/x86_64-linux-gnu/c++")   //used to exclude unnessary c++ files
+-elib("/usr/include/c++/14")
+-efile(Core/Src/syscalls.c)
+
+
+// Other options
+-D__GNUC__  // Define the GNU C compiler macro
+-D__ARMCC_VERSION=6000000  // Define the ARM compiler version if required
+-DARM_MATH_CM4
+-D__cplusplus=0  // Force C mode
+
+-d_uint32_t
+-d_int32_t
+-d_uint16_t
+-d_int16_t
+-d_uint8_t
+-d_int8_t
+
+
+// Define the source files to be analyzed (update with actual source file path)
+Core/Src/*.c    // Path to the source files in 'Core/Src'
+Core/Src/*.h   //Path to the header files 
+Core/Inc/*.h   // include all header files 

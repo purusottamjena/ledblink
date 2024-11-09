@@ -1,0 +1,30 @@
+// stm32.lnt - Configuration file for STM32-specific analysis in PCLint
+
+// Define the target STM32 device - Update this as per your target device
+#define STM32F446xx  // Replace with your target device, e.g., STM32F407xx, STM32F429xx, etc.
+
+// Define paths to include directories for STM32 HAL, CMSIS, etc.
+-I"/home/purusottam/ledblinking/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
+       // CMSIS includes
+-I"/home/purusottam/ledblinking/Drivers/STM32F4xx_HAL_Driver/Inc" // STM32 HAL includes
+//-I"/home/purusottam/ledblinking/stm32.lnt"
+-I"/usr/include/gnu"
+//-I"//usr/include/linux/stddef.h
+// Optionally, define macros that PCLint should recognize for STM32
+// Example for STM32 HAL
+#define HAL_DMA_MODULE_ENABLED
+#define HAL_UART_MODULE_ENABLED
+#define HAL_I2C_MODULE_ENABLED
+
+// If using any STM32 peripherals, define them
+#define STM32F4  // Example: Define STM32F4 series
+#define STM32F446RE  // Define your specific STM32 model
+
+// Enable specific warnings or checks for STM32 HAL code
+// For example, check for unused variables, unused functions, etc.
++WunreachableCode
++WunreferencedParam
+
+// Define any other necessary settings specific to your STM32 code
+// For example, file paths, conditionally defined functions, etc.
+
